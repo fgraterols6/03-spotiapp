@@ -1,0 +1,28 @@
+
+<div class="row mt-5">
+  <div class="col">
+    <h3>Last releases</h3>
+
+  </div>
+</div>
+<hr>
+
+<div class="alert alert-primary" role="alert" *ngIf="newSongs.length < 1">
+  No results found.    
+</div>
+
+<div class="row mt-5">
+    <div class="col mt-3" *ngFor="let song of newSongs">
+        <div class="card" style="width: 18rem;">
+            <img [src]="song.images[0].url" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ song.name }}</h5>
+                <div class="text-center">
+                  <span class="badge text-artist" *ngFor="let artist of song.artists">
+                    {{artist.name}}
+                  </span>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>

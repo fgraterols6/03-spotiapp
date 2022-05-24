@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col">
+        <div class="mt-4 mb-4">
+            <input #searchText type="text" (keyup)="buscar(searchText.value)" class="form-control"  placeholder="Search artist...">
+        </div>
+    </div>
+</div>
+
+<div class="alert alert-primary" role="alert" *ngIf="artists.length < 1">
+    No results found.    
+</div>
+
+<div class="row">
+    <div class="col col-lg-3 mb-3" *ngFor="let artist of artists">
+        <div class="card">
+            <img [src]="artist.images[0]?.url" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ artist.name }}</h5>
+            </div>
+        </div>
+    </div>
+</div>
